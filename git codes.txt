@@ -10,3 +10,7 @@
 9. git branch				shos the existing branches
 10. git merge (branch name)		it copies every file to the current branch
  
+
+->To Ignore a fie or folder
+    1. touch .gitignore
+    2. (open the .gitignore file and type the file name or the folder name)
