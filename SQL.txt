@@ -1,0 +1,170 @@
+CREATE TABLE product_master(Product_no varchar(6) PRIMARY KEY CHECK(Product_no LIKE 'P%'),
+						Description varchar(5) NOT NULL,
+						Profit_percentage number(5,2) NOT NULL,
+						UNIT_measure varchar(10) NOT NULL,
+						Qty_on_hand number(8) NOT NULL,
+						Sell_price number(8,2) NOT NULL check(Sell_price not LIKE 0),
+						Cost_price number(8,2) check(cost_price not LIKE  0));
+RENAME  product_master TO Master_product;
+ALTER TABLE product_master ADD (Profit_percentage number(5,2),Sell_price number(8,2),Cost_price number(8,2));
+ALTER TABLE product_master DROP (Profit_percentage,Sell_price,Cost_price);
+ALTER TABLE product_master ADD Profit_percentage number(5,2);
+ALTER TABLE product_master DROP COLUMN Profit_percentage;
+12988
+
+
+
+1.CREATE TABLE client_master(Client_no varchar(6) PRIMARY KEY CHECK(Client_no LIKE 'C%'),
+				     Name varchar(20),
+				     Address1 varchar(30),
+				     Address2 varchar(30),
+				     City varchar(15),
+				     State varchar(15),
+				     Pincode number(6),
+				     Bal_due number(10,2));
+
+INSERT INTO client_master VALUES('C0001','IvanBayross','ad11','ad21','Bombay','Maharastra',400054,15000);
+INSERT INTO client_master VALUES('C0002','VandanaSaitwal','ad12','ad22','Madras','Tamil Nadu',780001,0);
+INSERT INTO client_master VALUES('C0003','PramadaJaguste','ad13','ad23','Bombay','Maharastra',400057,5000);
+INSERT INTO client_master VALUES('C0004','BasuNavindgi','ad14','ad24','Bombay','Maharastra',40056,0);
+
+
+
+2.CREATE TABLE product_master(Product_no varchar(6) PRIMARY KEY check(Product_no LIKE 'P%'),
+				      Description varchar(50) NOT NULL,
+				      Profit_percent number(5,2) NOT NULL, 
+				      Unit_measure varchar(10) NOT NULL,
+				      Qty_on_Hand number(8) NOT NULL,
+				      Reorder_lvl number(8) NOT NULL,
+				      Sell_price number(8,2) NOT NULL CHECk(Sell_price <> 0), 
+				      Cost_price number(8,2) NOT NULL CHECk(Cost_price <> 0));
+
+INSERT INTO product_master VALUES('P00001','1.44 Floppies',5,'Piece',100,20,525,500);
+INSERT INTO product_master VALUES('P03453','Monitors',6,'Piece',10,3,12000,11280);
+INSERT INTO Product_master VALUES('P06734','Mouse',5,'piece',20,5,1050,1000);
+INSERT INTO Product_master VALUES('P07865','1.22 Floppies',5,'piece',100,20,525,500);
+
+
+3.CREATE TABLE salesMan_master(Salesman_no varchar(6) PRIMARY KEY CHECK(salesman_no LIKE 'S%'), 
+				       Salesman_name varchar(20) NOT NULL, 
+				       Address1 varchar(30) NOT NULL, 
+				       Address2 varchar(30),
+				       City varchar(20), 
+				       Pincode varchar(6),
+				       State varchar(20),
+				       Sal_amt number(8,2) NOT NULL CHECK(Sal_amt <> 0), 
+				       Tgt_to_get number(6,2) NOT NULL CHECK(Tgt_to_get <> 0),
+				       Ytd_sales number(6,2) NOT NULL,
+				       Remark varchar(60));
+
+INSERT INTO salesMan_master VALUES('S00001','Kiran','A/14','Worli','Bombay',400002,'MAH',3000,100,50,'Good');
+INSERT INTO salesMan_master VALUES('S00002','Manish','65','Nariman','Bombay',400001,'MAH',3000,200,100,'Good');
+INSERT INTO salesMan_master VALUES('S00003','Ravi','P-7','Bandra','Bombay',400032,'MAH',3000,200,100,'Good');
+INSERT INTO salesMan_master VALUES('S00004','Ashish','A/5','Juhu','Bombay',400044,'MAH',3000,200,150,'Good');
+
+
+4.CREATE Table sales_Order(S_order_no varchar(6) PRIMARY KEY CHECk(S_order_no LIKE 'O%'), 
+				   S_order_date date,
+				   Client_no varchar(6) REFERENCES client_master(Client_no),
+				   Dely_addr varchar(25),
+				   Salesman_no varchar(6) REFERENCES salesman_master(Salesman_no),
+				   Dely_type char(1) DEFAULT 'F',
+				   Billed_yn char(1), 
+				   Dely_date date ,
+				   Order_status varchar(10) CHECK(Order_status IN('In Process','Fulfilled','BackOrder','Cancelled')),
+				   constraint Dely_date CHECK(Dely_date > S_order_date));
+
+INSERT INTO sales_Order VALUES('O19001','12-JAN-96','C0001','dely_ad1','S00001','F','N','20-JAN-96','In Process');
+INSERT INTO sales_Order VALUES('O19002','25-JAN-96','C0002','dely_ad2','S00002','P','N','27-JAN-96','Cancelled');
+INSERT INTO sales_Order VALUES('O46865','18-FEB-96','C0003','dely_ad3','S00003','F','Y','20-FEB-96','Fulfilled');
+INSERT INTO sales_Order VALUES('O19003','03-APR-96','C0001','dely_ad4','S00001','F','Y','07-APR-96','Fulfilled');
+
+
+5.CREATE TABLE sales_order_detail(S_order_no varchar(6) REFERENCES sales_order(S_order_no),
+					    Product_no varchar(6) REFERENCES product_Master(Product_no),
+					    Qty_ordered number(8),
+					    Qty_disp number(8), 
+					    Product_rate number(10,2),
+					    PRIMARY KEY(S_order_no,Product_no));
+
+INSERT INTO sales_order_detail VALUES('O19001','P00001',4,4,525);
+INSERT INTO sales_order_detail VALUES('O19001','P03453',2,1,8400);
+INSERT INTO sales_order_detail VALUES('O19001','P06734',2,1,5250);
+INSERT INTO sales_order_detail VALUES('O19002','P07865',10,0,525);
+
+
+6. CREATE TABLE challan_header(Challan_no varchar(6) PRIMARY KEY CHECK(Challan_no LIKE 'CH%'),
+					 S_order_no varchar(6) REFERENCES sales_order(S_order_no), 
+					 Challan_date Date not null,
+					 Billed_YN char(1) Default 'N');
+
+INSERT INTO challan_header VALUES('CH9001','O19001','12-DEC-95','Y');
+INSERT INTO challan_header VALUES('CH6865','O46865','12-NOV-95','Y');
+INSERT INTO challan_header VALUES('CH3965','O19003','12-OCT-95','Y');
+
+7.CREATE TABLE challan_details(Challan_no varchar(26),
+					 Product_no varchar(26) REFERENCES product_master(Product_no),
+					 Qty_disp number(4,2) NOT NULL,
+					 PRIMARY KEY(Challan_no,Product_no));
+
+INSERT INTO challan_details VALUES('CH9001','P00001',4);
+INSERT INTO challan_details VALUES('CH9001','P03453',1);
+INSERT INTO challan_details VALUES('CH9001','P06734',1);
+INSERT INTO challan_details VALUES('CH6865','P07865',3);
+
+
+
+
+
+
+1.
+select name from client_master;
+
+
+2.
+select * from client_master;
+
+3.
+select name,city from client_master;
+
+4.
+select description from product_master;
+
+5.
+select name from client_master where name like'_a%';
+
+6.
+select name,city from client_master where city like'_a%';
+
+7.
+select name,city from client_master where city in ('Bombay','Delhi','Madras');
+
+8.
+select name,city from client_master where city = 'Bombay';
+
+9.
+select name,bal_due from client_master where bal_due > 10000;
+
+10.
+select * from sales_Order where to_char(S_order_date,'MON') = 'JAN';
+
+11.
+select * from client_master where client_no IN ('C0001','C0002');
+
+12.
+select * from product_master where description = '1.44 Floppies' OR description = '1.22 Floppies';
+
+13.
+select description,sell_price,sell_price * 15 as new_sell_price from product_master where sell_price>1500;
+
+
+
+
+
+
+
+
+
+
+
+

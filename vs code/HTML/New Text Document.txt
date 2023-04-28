@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<table border = "3" align = "centre">
+<tr>
+	<th>Name</th>
+	<th>Address</th>
+	<th>Image</th>
+		<th>Website</th>
+</tr>
+<tr>
+	<td>Jack</td>
+	<td>France</td>
+	<td><img src="C:\Users\Mohan.S\Desktop\New folder\flower2.webp" alt="Jack" width="100" height="100"></td></img>
+ 	<td> <a href="https://www.reva.edu.in"> click here </a></td> 
+ </tr>
+ <tr>
+ 	<td>John</td>
+ 	<td>United States</td>
+		<td> </td>
+ 	<td ><a href="https://www.reva.edu.in/course/master-of-computer-applications-mca"> Click here 
+</td>
+	</tr>
+</table>
+</body>
+</html>

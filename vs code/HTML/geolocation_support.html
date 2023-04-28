@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>
+ How to detect HTML 5 is supported
+ or not in the browser ?
+ </title>
+</head>
+<body>
+ <h1 style="color: green">
+ HTML5 Support Checking
+ </h1>
+
+ <b>
+ How to detect HTML5 support
+ in the browser ?
+ </b>
+
+
+<p>
+ Geolocation features is added in HTML5.
+ Checking the Geolocation supports.
+ </p>
+
+
+<p>
+ Click on the button to check
+ for Geolocation support
+ </p>
+
+
+<p>
+ Gelocation is supported:
+ <span class="output"></span>
+ </p>
+
+ <button onclick="checkGeolocation()">
+ Check for Geolocation
+ </button>
+
+ <script type="text/javascript">
+
+ function checkGeolocation() {
+ if (navigator.geolocation)
+ isSupported = true;
+ else
+ isSupported = false;
+ document.querySelector('.output').textContent
+ = isSupported;
+ }
+ </script>
+</body>
+</html>

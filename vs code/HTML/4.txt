@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<table border="2" cellspacing="3" align="center">
+	<tr>
+		<td align="centre">Timetable for Academic year 2022-2023(ODD Semister)
+	</tr>
+	<tr>	
+		<td align="centre">School Name: Computer Science and Applications
+		<td align="centre">Program Name : MCA
+	</tr>
+		<td aLign="centre">Semister: 1
+		<td aLign="centre">Section: B
+	</tr>
+	<tr>
+		<td align="center">Day
+		<td align="center">
+		<td align="center">Period 1
+		<td align="center">Period 2
+		<td align="center">period 3
+		<td align="center">period 4 
+		<td align="center">period 5 
+		<td align="center">period 6	
+		<td align="center">period 7
+		<td align="center">period 8
+		<td align="center">period 9
+	</tr>
+		
+</table>
+</body>
+</html>
+

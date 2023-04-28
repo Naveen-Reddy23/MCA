@@ -1,0 +1,12 @@
+1. git init			  	first step
+2. git status			  	check if it is added or commited
+3. git add 			  	first add and then commit the files
+4. git commit -m "(message)"	  	second commit after add
+5. git log 			  	to get the history of commits
+6. git checkout (hash code or 	  	to move to different branches or precious codes
+		branch name)
+7. git checkout (new branch name)	creates new branch
+8. git checkout -b (unique name) 	creates a new unique branch name (ex:naveen/data)
+9. git branch				shos the existing branches
+10. git merge (branch name)		it copies every file to the current branch
+ 

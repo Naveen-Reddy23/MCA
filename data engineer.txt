@@ -1,0 +1,145 @@
+Programming	- Python
+		- Sacala
+		- java
+
+Exploratory Data Analysis Libraries (python)	- Pandas
+						- NumPy
+						- Matplotlib
+
+Data Structures & Algorithm Topics	- Python   - List
+						    - Tuple
+						    - Dictionary
+						    - Ordered Dictionary
+						    - Set
+					- Array
+					- String
+					- Searching
+					- Sorting
+					- Dynamic Programming(Basic)
+
+Linux Commands & Shell Scripting
+
+DBMS Concepts	- Working on Transational Databases
+			- ACID Properties
+			- Transaction
+			- Concurrency Control
+			- ER Diagram
+			- Indexing
+			- Data Normalization
+			- Integrity Constraints
+			- DDL , DML , DQL , DCL
+
+Transational Databases	- MySQL
+				- Postgres
+
+
+SQL	- All types of Joins	- Cross Join
+				- Inner Join
+				- Left Join
+				- Right Join
+				- Full Outer Join	
+	- Where Clause & Order By Clause
+	- Group By & Having Caluse
+	- Case when Statement
+	- Case when Statement With Group By
+	- SubQueries & Nested SubQueries
+	- In , Not In , Any , All , Exists , Not Exists
+	- Aggregation & Date Related Functions
+	- Common Table Expressions		-  Iterative
+						- Recursive
+	- Window Function	- Over Clause , Partion By & Order By Syntax
+				- Count , Sum , Min , Max , Avg
+				- Row_Number, Rank , Dense_Rank
+				- Lead , Lag
+				- NTH_VALUE
+				- Frame Clause		- Range Between
+							- Rows Between
+
+NoSQL Databases	- HBase
+			- Cassandra
+			- MongoDB
+			- Elastic Search
+
+Fundamentals Of BigData	- What is Big Data?
+				- 5v's Of BigData
+				- Distributed Computation
+				- Distributed Storage
+				- Hadoop (Working & Architecture)	- HDFS
+									- Map-Reduce
+									- YARN
+				- Cluster & Commodity Hardware
+				- File Formats	- CSV
+						- JSON
+						- ORC
+						- PARQUET
+						- AVRO
+				- Types of Data	 - Structured
+						 - Semi Structured
+						 - Unstructured
+Batch Data Processing Framework	- Apache Spark	   - Spark Core
+							   - Spark SQL
+
+
+Real Time Data Processing Frameworks	- Apache Spark	   - Spark Structured Straming
+						- Apache Flink
+
+
+No Code Frameworks Under BigData		- Apache Nifi
+						- Apache Flume
+						- Apache SQOOP
+
+Workflow Managers	- Apache Airflow
+			- Azkaban
+
+Must Know Things for CI/CD Pipelines 		- GitHub
+						- GitHub Actions
+						- Jenkins
+						- Spinnaker
+						- Docker
+						- Kubernetes
+
+Messaging Queue	- Apache kafka
+
+
+Data Warehousing Concepts 	- OLTP vs OLAP
+				- Normalized Data vs DeNormalized Data
+				- Data Lake , Data Warehouse , Data Mart , Lake House
+				- Fact Tables
+				- Dimension Tables
+				- Slowly Changing Dimensions Tables & Their Types
+				- Start  Schema
+				- SnowFlake Schema
+				- Galaxy Schema
+				- Data Warehouse Design Questions
+
+
+Data Warehousing Services	- Apache Hive
+				- SnowFlake
+				- RedShift(AWS Cloud)
+
+
+Cloud Services (Any One Can Be Picked) 	- AWS	- S3 , Lambda , EC2 , EMR , Glue , RDS , Athena , RedShift , SNS, 								  SQS , Kinesis , CloudWatch , QuickSight , Dynamo
+						- Azure -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

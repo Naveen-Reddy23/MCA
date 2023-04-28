@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Enter a number:</h2>
+
+<form>
+  <label for="number">Number:</label><br>
+  <input type="number" id="number" name="number"><br><br>
+  <button type="button" onclick="checkNumber()">Check</button>
+</form> 
+
+<script>
+function checkNumber() {
+  var number = document.getElementById("number").value;
+  var binary = parseInt(number).toString(2);
+  var count = (binary.match(/1/g) || []).length;
+  if (count % 2 == 0) {
+    alert("The number is an evil number.");
+  } else {
+    alert("The number is not an evil number.");
+  }
+}
+</script>
+
+</body>
+</html>

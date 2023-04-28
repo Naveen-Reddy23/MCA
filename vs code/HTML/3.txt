@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>RECIPES</h1>
+<ul>
+	<li>Recipes</li>
+		<ol style = "i">
+			<li>Christmas Recipes</li
+				<ul style="list-style-type:square">
+					<li>Rolled Sugar Cookies</li>
+					<li>Sweet Potao Casserole</li>
+					<li>Apple Pie</li>
+				</ul>
+			<li>Fall Recipes</li>
+				<ul style="list-style-type:square">
+					<li>Pasta</li>
+					<li>Pancakes</li>
+						<ul style="list-style-type:circle">
+							<li>Pancakes 1</li>
+							<li>Pancakes 2</li>
+						</ul>
+					<li>Pumpkin Pie</li>
+				</ul>
+			<li>Indian Recipes</li>
+		</ol>
+	<li>Ingredients</li>
+	<li>Kitchen Tips</li>
+</ul>
+
+			
+  

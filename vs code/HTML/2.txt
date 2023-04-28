@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<dl>
+	<dt>Aries</dt>
+	<dd>-one of the 12 horoscope signs.</dd>
+	<dt>Bingo</dt>
+	<dd>-One of my evening snacks
+	<dt>Leo</dt>
+	<dd>-Also one of the horoscope signs.</dd>
+	<dt>Oracle</dt>
+	<dd>-A nultinational technology corporation</dd>
+</dl>
+</body>
+</html>
