@@ -14,3 +14,14 @@
 ->To Ignore a fie or folder
     1. touch .gitignore
     2. (open the .gitignore file and type the file name or the folder name)
+
+
+->To push 
+    1. git remote add origin https://github.com/Naveen-Reddy23(user name)/(repo name).git
+    2. git branch -M master 	(rename main to mster)
+    3. git push -u origin master(branch name)
+
+
+->To push other branches(to push you have to add and commit first)
+    1. git checkout dev(branch name)
+    2. git push -u origin dev	
