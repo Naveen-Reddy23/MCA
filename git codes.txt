@@ -5,8 +5,8 @@
 5. git log 			  	to get the history of commits
 6. git checkout (hash code or 	  	to move to different branches or precious codes
 		branch name)
-7. git checkout (new branch name)	creates new branch
-8. git checkout -b (unique name) 	creates a new unique branch name (ex:naveen/data)
+7. git branch  (new branch name)	creates new branch
+8. git checkout -b (unique branch name) 	creates a new unique branch name (ex:naveen/data)
 9. git branch				shos the existing branches
 10. git merge (branch name)		it copies every file to the current branch
  
@@ -25,3 +25,13 @@
 ->To push other branches(to push you have to add and commit first)
     1. git checkout dev(branch name)
     2. git push -u origin dev	
+
+->Go to the repo you want to pull
+   1.click fork on top right corner 
+   2. click create fork
+   3. click code and copy the https url
+   4. git clone (copied url)
+   5. (do changes and puch)
+   6. In git hub go to the cloned repo and click contribute
+   7. click open pull request
+   8. create pull request
